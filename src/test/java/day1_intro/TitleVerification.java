@@ -21,7 +21,39 @@ public class TitleVerification {
 
         Thread.sleep(2500);
 
+        driver.navigate().back();
+
+        Thread.sleep(1000);
+
+        driver.navigate().forward();
+
+        driver.navigate().to("https://www.facebook.com");
+
+        Thread.sleep(1000);
+
+        System.out.println("current Title " + driver.getTitle());
+
+        String expectedUrl ="yeliz";
+        currentUrl= driver.getCurrentUrl();
+        System.out.println("current Url= "+ currentUrl);
+
+        if(currentUrl.contains(expectedUrl)){
+            System.out.println("Current url pass: " +currentUrl);
+        }else{
+            System.err.println("Fail ");
+}
+
         driver.close();
+
+        /*
+          if (url.contains(expectedInUrl)) {
+            System.out.println("Current url verification pass!: " + url);
+        } else {
+            System.err.println("URL verification Fail: " );
+
+
+        }
+         */
 
     }
 }
